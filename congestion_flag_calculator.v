@@ -1,4 +1,4 @@
- module queue_len_extractor #(parameter CONGESTION_THRESH = 2,
+ module congestion_flag_calculator #(parameter CONGESTION_THRESH = 8,
  parameter QUEUE_LEN_WIDTH = 16
  ) (
     input [QUEUE_LEN_WIDTH-1:0]threshold,
