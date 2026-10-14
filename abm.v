@@ -53,7 +53,7 @@ always @(posedge clk) begin
         for (j = 0; j < VOQ; j = j + 1) begin
             if (cong_count[j*$clog2(N) +: $clog2(N) ] != 0) begin
                 threshold[j*THRESHOLD_WIDTH +: THRESHOLD_WIDTH] <=
-                (ALPHA *(free_space - queue_len[j*QUEUE_LEN_WIDTH +: QUEUE_LEN_WIDTH]))/
+                (ALPHA * free_space)/
                 (cong_count[j*$clog2(N) +: $clog2(N)]* VOQ);
             end
             else begin
